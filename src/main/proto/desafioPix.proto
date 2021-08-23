@@ -8,13 +8,28 @@ option objc_class_prefix = "HLW";
 package br.com.zup.edu;
 
 service DesafioPixService {
-  rpc send (DesafioPixRequest) returns (DesafioPixReply) {}
+  rpc registrarChave (RegistrarChaveRequest) returns (RegistrarChaveResponse) {}
 }
 
-message DesafioPixRequest {
-  string name = 1;
+enum TipoDeChave {
+  CPF = 0;
+  TELEFONE = 1;
+  EMAIL = 2;
+  CHAVE_ALEATORIA = 3;
+}
+enum TipoDeConta {
+  CONTA_POUPANCA = 0;
+  CONTA_CORRENTE = 1;
 }
 
-message DesafioPixReply {
-  string message = 1;
+message RegistrarChaveRequest {
+  string idCliente = 1;
+  TipoDeChave tipoDeChave = 2;
+  string chave = 3;
+  TipoDeConta tipoDeConta = 4;
+
+}
+
+message RegistrarChaveResponse {
+  string idChaveCriada = 1;
 }
