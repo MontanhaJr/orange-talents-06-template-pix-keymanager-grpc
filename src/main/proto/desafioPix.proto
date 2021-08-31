@@ -12,18 +12,20 @@ service DesafioPixService {
 }
 
 enum TipoDeChave {
-  CPF = 0;
-  TELEFONE = 1;
-  EMAIL = 2;
-  CHAVE_ALEATORIA = 3;
+  UNKNOWN_TIPO_CHAVE = 0;
+  CPF = 1;
+  TELEFONE = 2;
+  EMAIL = 3;
+  ALEATORIA = 4;
 }
 enum TipoDeConta {
-  CONTA_POUPANCA = 0;
-  CONTA_CORRENTE = 1;
+  UNKNOWN_TIPO_CONTA = 0;
+  CONTA_POUPANCA = 1;
+  CONTA_CORRENTE = 2;
 }
 
 message RegistrarChaveRequest {
-  string idCliente = 1;
+  string clienteId = 1;
   TipoDeChave tipoDeChave = 2;
   string chave = 3;
   TipoDeConta tipoDeConta = 4;
@@ -31,5 +33,6 @@ message RegistrarChaveRequest {
 }
 
 message RegistrarChaveResponse {
-  string idChaveCriada = 1;
+  string clienteId = 1;
+  string pixId = 2;
 }

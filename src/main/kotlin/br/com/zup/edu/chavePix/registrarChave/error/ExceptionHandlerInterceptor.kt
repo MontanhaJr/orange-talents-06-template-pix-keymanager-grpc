@@ -1,5 +1,6 @@
 package br.com.zup.edu.chavePix.registrarChave.error
 
+import br.com.zup.edu.chavePix.registrarChave.ChavePixJaCadastradaException
 import com.google.rpc.BadRequest
 import io.grpc.BindableService
 import io.grpc.Status
@@ -30,6 +31,7 @@ class ExceptionHandlerInterceptor : MethodInterceptor<BindableService, Any?> {
             val statusError = when (e) {
                 is IllegalArgumentException -> Status.INVALID_ARGUMENT.withDescription(e.message).asRuntimeException()
                 is IllegalStateException -> Status.FAILED_PRECONDITION.withDescription(e.message).asRuntimeException()
+                is ChavePixJaCadastradaException -> Status.ALREADY_EXISTS.withDescription(e.message).asRuntimeException()
                 is ConstraintViolationException -> handleConstraintViolationException(e)
                 else -> Status.UNKNOWN.withDescription("Erro Inesperado").asRuntimeException()
             }
