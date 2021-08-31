@@ -8,6 +8,10 @@ plugins {
     id("com.google.protobuf") version "0.8.15"
 }
 
+noArg {
+    invokeInitializers = true
+}
+
 version = "0.1"
 group = "br.com.zup.edu"
 
@@ -42,13 +46,13 @@ dependencies {
     testImplementation("org.testcontainers:postgresql")
     testImplementation("org.testcontainers:testcontainers")
     implementation("io.micronaut:micronaut-validation")
+    implementation("org.hibernate:hibernate-validator:6.1.6.Final")
     implementation("io.micronaut:micronaut-http-client")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
     testImplementation("io.micronaut:micronaut-http-client")
 
-    implementation("org.hibernate.validator:hibernate-validator:6.0.2.Final")
 
 }
 
