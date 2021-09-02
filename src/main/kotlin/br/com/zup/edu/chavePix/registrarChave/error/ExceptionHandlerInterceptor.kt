@@ -22,7 +22,7 @@ class ExceptionHandlerInterceptor : MethodInterceptor<BindableService, Any?> {
 
     override fun intercept(context: MethodInvocationContext<BindableService, Any?>?): Any? {
         try {
-            logger.info("INTERCEPTADO OTÁRIO!")
+            logger.info("Intercepted")
             return context?.proceed()
         } catch (e: Exception) {
             e.printStackTrace()
