@@ -3,6 +3,7 @@ package br.com.zup.edu.chavePix.registrarChave
 import br.com.zup.edu.TipoDeConta
 import br.com.zup.edu.chavePix.ChavePix
 import br.com.zup.edu.chavePix.TipoDeChave
+import br.com.zup.edu.chavePix.registrarChave.validation.ValidUUID
 import br.com.zup.edu.dto.response.ContaAssociada
 import io.micronaut.core.annotation.Introspected
 import java.util.*

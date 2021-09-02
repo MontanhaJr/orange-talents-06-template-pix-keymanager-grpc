@@ -1,4 +1,4 @@
-package br.com.zup.edu.chavePix.registrarChave
+package br.com.zup.edu.chavePix.registrarChave.error
 
 import java.lang.RuntimeException
 

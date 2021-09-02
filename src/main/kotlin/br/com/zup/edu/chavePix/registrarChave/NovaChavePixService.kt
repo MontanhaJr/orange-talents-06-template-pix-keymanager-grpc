@@ -1,7 +1,8 @@
 package br.com.zup.edu.chavePix.registrarChave
 
 import br.com.zup.edu.chavePix.ChavePix
-import br.com.zup.edu.chavePix.ChavePixRepository
+import br.com.zup.edu.chavePix.registrarChave.repository.ChavePixRepository
+import br.com.zup.edu.chavePix.registrarChave.error.ChavePixJaCadastradaException
 import br.com.zup.edu.integracao.ContasItauClient
 import io.micronaut.validation.Validated
 import java.lang.IllegalStateException
@@ -19,7 +20,7 @@ class NovaChavePixService (@Inject var repository: ChavePixRepository,
     fun registra (@Valid novaChavePix: NovaChavePix) : ChavePix {
 
         if (repository.existsByChave(novaChavePix.chave)) {
-            throw ChavePixJaCadastradaException("Chave Pix \"${novaChavePix.chave}\"")
+            throw ChavePixJaCadastradaException("Chave Pix \"${novaChavePix.chave}\" já existe")
         }
 
         val response = contasItauClient.buscarContaPorTipo(novaChavePix.clienteId, novaChavePix.tipoDeConta!!.name)

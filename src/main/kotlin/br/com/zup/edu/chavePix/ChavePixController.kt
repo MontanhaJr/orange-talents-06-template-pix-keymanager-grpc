@@ -2,7 +2,7 @@ package br.com.zup.edu.chavePix
 
 import br.com.zup.edu.DesafioPixServiceGrpc
 import br.com.zup.edu.RegistrarChaveRequest
-import br.com.zup.edu.chavePix.registrarChave.NovaChavePixRequest
+import br.com.zup.edu.dto.request.NovaChavePixRequest
 import io.grpc.Status
 import io.grpc.StatusRuntimeException
 import io.micronaut.http.HttpResponse

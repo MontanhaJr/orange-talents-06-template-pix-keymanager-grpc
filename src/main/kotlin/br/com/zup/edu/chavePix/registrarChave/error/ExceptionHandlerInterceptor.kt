@@ -1,6 +1,5 @@
 package br.com.zup.edu.chavePix.registrarChave.error
 
-import br.com.zup.edu.chavePix.registrarChave.ChavePixJaCadastradaException
 import com.google.rpc.BadRequest
 import io.grpc.BindableService
 import io.grpc.Status

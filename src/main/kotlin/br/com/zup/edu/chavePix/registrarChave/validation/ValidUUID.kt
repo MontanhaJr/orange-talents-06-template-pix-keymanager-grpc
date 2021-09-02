@@ -1,4 +1,4 @@
-package br.com.zup.edu.chavePix.registrarChave
+package br.com.zup.edu.chavePix.registrarChave.validation
 
 import java.lang.annotation.ElementType
 import javax.validation.Constraint
